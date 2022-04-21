@@ -24,7 +24,7 @@ const allGray=()=>{
 const setStars=(role)=>{
     for (let index = 0; index < role; index++) {
         const element = stars[index];
-        element.style.color="gold";
+        element.style.color="#f7ad23";
     }
 }
 
@@ -43,4 +43,5 @@ const translateFace =(position)=>{
     const element = emojies[position-1];
     element.style.display="block"
 }
+setStars(1);
 translateFace(1);

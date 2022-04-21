@@ -63,7 +63,7 @@
 
   }
   .fed-container{
-    background: rgba(115, 174, 25, 0.698);
+    background: rgba(10, 84, 180, 0.698);
     display: flex;
     align-items: center;
     height: 100vh;
@@ -72,8 +72,10 @@
   }
   .cont{
     width: 400px;
-    background-color: wheat;
+    background-color: rgb(255, 255, 255);
     height: 100px;
+    padding: 1rem;
+    border-radius: 10px;
   }
   .emoji-container{
     position: absolute;
@@ -106,4 +108,5 @@
   
   #star1, #star2, #star3, #star4, #star5{
     cursor: pointer;
+    color: "#f7ad23";
   }
