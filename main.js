@@ -5,58 +5,42 @@ let star4 = document.getElementById('star4');
 let star5 = document.getElementById('star5');
 let emoji =document.getElementsByClassName('far');
 
-
-//angry
-star2.onclick = function(){
-    star2.style.color='gold';
-    star3.style.color='gray';
-    star4.style.color='gray';
-    star5.style.color='gray';
-    star2.style.color='gold';
-    // emoji.syle.transform = 'translateX(-100%)';
-
-
-
+const stars= document.querySelectorAll('.fa-star');
+const emojies = [...document.getElementById("emojies").children];
+stars.forEach(el => {
+    el.addEventListener('click', function(obj) {
+        const element = obj.target;
+        const role = element.getAttribute('role');
+        allGray(); 
+        setStars(role);
+        convertEmoji(role);
+    });
+});
+const allGray=()=>{
+    stars.forEach(el => {
+        el.style.color='gray';
+    });
 }
-//sad
-star3.onclick = function(){
-    star2.style.color='gold';
-    star3.style.color='gold';
-    star4.style.color='gray';
-    star5.style.color='gray';
-   emoji.style.display ='none';
-   console.log(em)
-
-}
-//moderate
-star4.onclick = function(){
-    star2.style.color='gold';
-    star3.style.color='gold';
-    star4.style.color='gold';
-    star5.style.color='gray';
-    // emoji.syle.transform = 'translateX(-200%)';
-
-}
-//smily
-star5.onclick = function(){
-    star2.style.color='gold';
-    star3.style.color='gold';
-    star4.style.color='gold';
-    star5.style.color='gold';
-    // emoji.syle.transform = 'translateX(-300%)';
-
-}
-//laugh
-star1.onclick = function(){
-    star1.style.color='gold';
-    star2.style.color='gray';
-    star3.style.color='gray';
-    star4.style.color='gray';
-    star5.style.color='gray';
-    // emoji.syle.transform = 'translateX(-400%)';
-
+const setStars=(role)=>{
+    for (let index = 0; index < role; index++) {
+        const element = stars[index];
+        element.style.color="gold";
+    }
 }
 
-// emoji.foreach((emiji)=>{
-//     emoji.style.trans
-// })
+const convertEmoji=(role)=>{
+    hideAllFacets();
+    translateFace(role);
+}
+
+const hideAllFacets=()=>{
+    emojies.forEach(el=>{
+        el.style.display='none';
+    })
+}
+// display face accoding to  index
+const translateFace =(position)=>{
+    const element = emojies[position-1];
+    element.style.display="block"
+}
+translateFace(1);
